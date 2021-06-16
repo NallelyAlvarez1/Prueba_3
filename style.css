@@ -1,0 +1,21 @@
+h1{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+a{
+    color: aqua;
+}
+p {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    text-align: justify;
+
+}
+body { background-image: url("https://n9.cl/fondo-libro") }
+
+p2{
+    font-family: 'Century Gothic', cursive;
+    font-size: 30px;
+    text-align: center;
+
+}

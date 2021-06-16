@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Formulario de registro</title>
+
+    <!-- Barra de navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <a class="navbar-brand" href="index.html">
+            <img src="https://image.freepik.com/vector-gratis/icono-informacion-linea-estadistica_24908-28695.jpg"
+                width="80" height="70" class="d-inline-block align-top"
+                alt="imagen de un grafico de barras y enfrente una mano manejando un mouse de computadora">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Pagina Principal <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Estadistica por
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="deporte.html">Deporte</a></li>
+                        <li><a class="dropdown-item" href="ligas_es.html">Ligas de España</a></li>
+                    </ul>
+        </div>
+        </li>
+        <a class="btn btn-light" href="formulario.html" role="button">Inscribete Aquí</a>
+        </ul>
+        </div>
+    </nav>
+    <!-- validacion campo vacio-->
+    <script>
+        $(document).ready(function () {
+            $("#alerta").hide();
+            $("#formulario").submit(function () {
+                var mensaje = "";
+                if ($("#nombre").val().trim().length == 0) {
+                    mensaje = "Rellene este campo *Nombre"
+                }
+                if ($("#rut").val().trim().length == 0) {
+                    mensaje = "Rellene este campo *RUT"
+                }
+                if ($("#email").val().trim().length == 0) {
+                    mensaje = "Rellene este campo *Correo electronico"
+                }
+                if ($("#contraseña").val().trim().length == 0) {
+                    mensaje = "Rellene este campo *Contraseña"
+                }
+                if ($("#conttraseña2").val().trim().length == 0) {
+                    mensaje = "Rellene este campo *Repetir contraseña"
+                }
+                if (mensaje != "") {
+                    $("#alerta").html(mensaje);
+                    $("#alerta").show();
+                    event.preventDefault();
+
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card-header text-uppercase text-center text-big">
+            <h1>Formulario de Inscripción</h1>
+        </div>
+        <div class="card-body">
+            <!-- Inicio Formulario -->
+            <div class="container">
+                <form action="" id="formulario" onsubmit="verificarPasswords(); return false">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre-l"
+                                    placeholder="Ingrese el nombre completo del libro" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="autor">Autor</label>
+                        <input type="text" class="form-control" id="autor" placeholder="Ingrese el nombre del autor" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="contraseña">ISBN</label>
+                            <input type="text" class="form-control" id="isbn1"
+                                placeholder="Ingrese el ISBN del libro" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="contraseña2">Repetir ISBN</label>
+                            <input type="text" class="form-control" id="isbn2"
+                                placeholder="Ingrese el ISBN del libro" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc">Descripcion</label>
+                                <textarea class="form-control" id="desc" rows="3"></textarea> 
+                    </div>
+                    <div class="form-group">
+                        <label for="categ">Categoria</label>
+                        <textarea class="form-control" id="categ" rows="3"></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Inscribirme" id="enviar">
+            </div>
+
+            </form>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="row mt-5 mb-5">
+            <div class="col-12 text-center">
+                <div class="badge badge-light">
+                    Nallely Alvarez-2021
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Validacion Rut modulo 11  -->
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+    <!-- Script Bootstrap-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
